@@ -1,24 +1,32 @@
-# Uniswap V2
+# AsterSwap V2 Periphery
 
-[![Actions Status](https://github.com/Uniswap/uniswap-v2-periphery/workflows/CI/badge.svg)](https://github.com/Uniswap/uniswap-v2-periphery/actions)
-[![npm](https://img.shields.io/npm/v/@uniswap/v2-periphery?style=flat-square)](https://npmjs.com/package/@uniswap/v2-periphery)
+**Original, unmodified** Uniswap V2 Periphery contracts for AsterSwap on Aster L1.
 
-In-depth documentation on Uniswap V2 is available at [uniswap.org](https://uniswap.org/docs).
+> ⚠️ Contract code is preserved exactly as audited. Do not modify `contracts/`.
 
-The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@uniswap/v2-periphery@latest/).
+## Contracts
 
-# Local Development
+| Contract | Solidity | Description |
+|---|---|---|
+| `UniswapV2Router01` | 0.6.6 | Add/remove liquidity, swap |
+| `UniswapV2Router02` | 0.6.6 | Router v2 + fee-on-transfer token support |
+| `UniswapV2Migrator` | 0.6.6 | V1 → V2 migration helper |
 
-The following assumes the use of `node@>=10`.
+## Dev Environment
 
-## Install Dependencies
+Requires **Node 14** (uses `ethereum-waffle`). Newer Node versions are incompatible with native deps.
 
-`yarn`
+```bash
+nvm use 14   # or: nvm install 14
+yarn install
+yarn compile
+yarn test
+```
 
-## Compile Contracts
+## Dependency on v2-core
 
-`yarn compile`
+Periphery imports interfaces from v2-core. The `@uniswap/v2-core` npm package is used.
 
-## Run Tests
+## Source
 
-`yarn test`
+Fork of [Uniswap/v2-periphery](https://github.com/Uniswap/v2-periphery).
