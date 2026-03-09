@@ -12,20 +12,18 @@
 | `UniswapV2Router02` | 0.6.6 | Router v2 + fee-on-transfer token support |
 | `UniswapV2Migrator` | 0.6.6 | V1 → V2 migration helper |
 
-## Dev Environment
+## Running Tests (Docker)
 
-Requires **Node 14** (uses `ethereum-waffle`). Newer Node versions are incompatible with native deps.
+The original toolchain (`ethereum-waffle`) requires **Node 12 + Python 3.7**.
+Docker handles this automatically.
 
 ```bash
-nvm use 14   # or: nvm install 14
-yarn install
-yarn compile
-yarn test
+# Run tests
+docker compose run --rm test
+
+# Compile only
+docker compose run --rm compile
 ```
-
-## Dependency on v2-core
-
-Periphery imports interfaces from v2-core. The `@uniswap/v2-core` npm package is used.
 
 ## Source
 

@@ -12,17 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 14
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Compile contracts
-        run: yarn compile
-
-      - name: Run tests
-        run: yarn test
+      - name: Build and run tests via Docker
+        run: docker compose run --rm test
